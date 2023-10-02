@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using CrazyGames;
+//using CrazyGames;
 using Momo;
 
 public class GameManager : MonoBehaviour
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int currentLevel;
     [SerializeField] private GameState currentState;
     [SerializeField] public int numberOfMoves;
-    
+
     [SerializeField] private float levelLength;
 
     public int CurrentScore => currentScore;
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         currentLevel = PlayerPrefs.GetInt("level", 1);
         numberOfMoves = CarManager.Instance.cars.Count + 10;
         UIManager.Instance.UpdateMoves(numberOfMoves);
-        
+
         UIManager.Instance.UpdateLevel(currentLevel);
         currentState = GameState.Main;
         StartLevel();
@@ -76,12 +76,12 @@ public class GameManager : MonoBehaviour
     {
         UIManager.Instance.SwitchUIPanel(UIPanelState.Gameplay);
         UIManager.Instance.UpdateSpecialCarImage();
-        CrazyEvents.Instance.GameplayStart();
+        //CrazyEvents.Instance.GameplayStart();
         if (currentLevel % 6 == 0)
         {
             UIManager.Instance.specialCar.SetActive(true);
         }
-        currentState = GameState.InGame;       
+        currentState = GameState.InGame;
     }
 
     public void AddMove(int v)
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
         {
             confetti.SetActive(true);
             Invoke("ShowWinUI", 1.4f);
-            CrazyEvents.Instance.GameplayStop();
+            // CrazyEvents.Instance.GameplayStop();
 
             currentState = GameState.Win;
 
@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
             foreach (MonoBehaviour m in objectsToDisable)
             {
                 m.enabled = false;
-            }        
+            }
             //Send Data
             Analytics.Instance.WinLevel();
 
@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
     }
     public void SkipLevel()
     {
-        CrazyEvents.Instance.GameplayStop();
+        // CrazyEvents.Instance.GameplayStop();
 
         currentState = GameState.Win;
         PlayerPrefs.SetInt("level", currentLevel + 1);
@@ -136,12 +136,12 @@ public class GameManager : MonoBehaviour
         {
             CarManager.Instance.DisableCars();
             Invoke("ShowLoseUI", 2f);
-            CrazyEvents.Instance.GameplayStop();
+            // CrazyEvents.Instance.GameplayStop();
             currentState = GameState.Lose;
             foreach (MonoBehaviour m in objectsToDisable)
             {
                 m.enabled = false;
-            }          
+            }
             //Send Data
             Analytics.Instance.LoseLevel();
         }

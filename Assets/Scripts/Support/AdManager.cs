@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //using AppodealAds.Unity.Api;
 //using AppodealAds.Unity.Common;
-using CrazyGames;
+//using CrazyGames;
 
 public class AdManager : MonoBehaviour
 {
@@ -33,12 +33,12 @@ public class AdManager : MonoBehaviour
     public void ShowNormalAd(int id)    
     {
         currentId = id;
-        CrazyAds.Instance.beginAdBreak(ShowRewardedCallBack);
+     //   CrazyAds.Instance.beginAdBreak(ShowRewardedCallBack);
     }
 
     public void ShowLevelChangeAd()
     {
-        CrazyAds.Instance.beginAdBreak(ChangeLevel);
+       // CrazyAds.Instance.beginAdBreak(ChangeLevel);
     }
 
     public void ChangeLevel()
@@ -49,7 +49,7 @@ public class AdManager : MonoBehaviour
  public void ShowRewarded(int id)
     {
         currentId = id;
-        CrazyAds.Instance.beginAdBreakRewarded(ShowRewardedCallBack);
+        //CrazyAds.Instance.beginAdBreakRewarded(ShowRewardedCallBack);
         //Call rewarded show
     }
 

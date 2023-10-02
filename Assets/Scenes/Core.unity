@@ -885,8 +885,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tips:
-  - aaa
-  - bbb
+  - TAP TO MOVE CARS
+  - SORT ALL CARS
   waitTime: 0.1
   tipText: {fileID: 627063936}
   sh: {fileID: 1744793808}

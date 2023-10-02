@@ -212,7 +212,7 @@ public class UIManager : MonoBehaviour
 
     public void OnClickWin()
     {
-        GameManager.Instance.WinLevel();
+        GameManager.Instance.DoChangeLevel();
     }
 
     public void OnClickAddMoves()
