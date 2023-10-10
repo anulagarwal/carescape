@@ -319,10 +319,10 @@ public class Car : MonoBehaviour
         }
         if (other.gameObject.tag == "Wall")
         {
-            isFinished = true;
+            //isFinished = true;
 
-            CarManager.Instance.CheckForWin();
-            gameObject.SetActive(false);
+            //CarManager.Instance.CheckForWin();
+            //gameObject.SetActive(false);
         }
     }
 

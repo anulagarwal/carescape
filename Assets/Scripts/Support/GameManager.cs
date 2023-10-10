@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using CrazyGames;
 using Momo;
 
 public class GameManager : MonoBehaviour
@@ -76,18 +75,14 @@ public class GameManager : MonoBehaviour
     {
         UIManager.Instance.SwitchUIPanel(UIPanelState.Gameplay);
         UIManager.Instance.UpdateSpecialCarImage();
-        CrazyEvents.Instance.GameplayStart();
+        AdManager.Instance.PreloadRewardedAd();
         if (currentLevel % 6 == 0)
         {
            // UIManager.Instance.specialCar.SetActive(true);
         }
-<<<<<<< Updated upstream
-        currentState = GameState.InGame;       
-=======
-        currentState = GameState.InGame;
-        Analytics.Instance.StartLevel(currentLevel);
 
->>>>>>> Stashed changes
+        currentState = GameState.InGame;       
+
     }
 
     public void AddMove(int v)
@@ -110,7 +105,6 @@ public class GameManager : MonoBehaviour
         {
             confetti.SetActive(true);
             Invoke("ShowWinUI", 1.4f);
-            CrazyEvents.Instance.GameplayStop();
 
             currentState = GameState.Win;
 
@@ -128,7 +122,6 @@ public class GameManager : MonoBehaviour
     }
     public void SkipLevel()
     {
-        CrazyEvents.Instance.GameplayStop();
 
         currentState = GameState.Win;
         PlayerPrefs.SetInt("level", currentLevel + 1);
@@ -142,7 +135,6 @@ public class GameManager : MonoBehaviour
         {
             CarManager.Instance.DisableCars();
             Invoke("ShowLoseUI", 2f);
-            CrazyEvents.Instance.GameplayStop();
             currentState = GameState.Lose;
             foreach (MonoBehaviour m in objectsToDisable)
             {
@@ -161,7 +153,7 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeLevel()
     {
-        AdManager.Instance.ShowLevelChangeAd();
+        AdManager.Instance.ShowNormalAd(5);
     }
 
 

@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Momo Games
-  productName: Traffic Escape 3D
+  productName: Car Escape 3D
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
@@ -158,7 +158,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.momo.sandsort
+    Android: com.momo.carescape
     Standalone: com.DefaultCompany.Fillball
   buildNumber:
     Standalone: 0
@@ -166,13 +166,9 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-<<<<<<< Updated upstream
-  AndroidBundleVersionCode: 2
-=======
   AndroidBundleVersionCode: 9
->>>>>>> Stashed changes
   AndroidMinSdkVersion: 22
-  AndroidTargetSdkVersion: 33
+  AndroidTargetSdkVersion: 34
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   stripEngineCode: 1
@@ -253,24 +249,18 @@ PlayerSettings:
   templatePackageId: com.unity.template.3d@5.0.4
   templateDefaultScene: Assets/Scenes/SampleScene.unity
   useCustomMainManifest: 1
-<<<<<<< Updated upstream
-  useCustomLauncherManifest: 1
-  useCustomMainGradleTemplate: 1
-  useCustomLauncherGradleManifest: 1
-=======
   useCustomLauncherManifest: 0
   useCustomMainGradleTemplate: 0
   useCustomLauncherGradleManifest: 0
->>>>>>> Stashed changes
   useCustomBaseGradleTemplate: 0
-  useCustomGradlePropertiesTemplate: 1
+  useCustomGradlePropertiesTemplate: 0
   useCustomGradleSettingsTemplate: 0
   useCustomProguardFile: 0
   AndroidTargetArchitectures: 3
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: /Users/gankstarr/Desktop/Projects/template/Template.keystore
+  AndroidKeystoreName: /Users/gankstarr/Desktop/Projects/CarEscape/Android/user.keystore
   AndroidKeyaliasName: anulagarwal
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidBuildApkPerCpuArchitecture: 0
@@ -294,11 +284,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-<<<<<<< Updated upstream
-      m_Icon: {fileID: 0}
-=======
       m_Icon: {fileID: 2800000, guid: 0061bd0f20fcd448f9cbccff4bcbd89b, type: 3}
->>>>>>> Stashed changes
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -819,10 +805,10 @@ PlayerSettings:
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: PROJECT:Crazy_2020
+  webGLTemplate: APPLICATION:Minimal
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
-  webGLCompressionFormat: 0
+  webGLCompressionFormat: 2
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
@@ -835,10 +821,10 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: VS_ATT;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED;gameanalytics_max_enabled
+    Android: VS_ATT;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED
     Standalone: MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED
     WebGL: MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED
-    iPhone: gameanalytics_max_enabled
+    iPhone: 
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

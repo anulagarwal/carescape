@@ -13,6 +13,8 @@ public class MainMenuHandler : MonoBehaviour
     {
         currentLevel = PlayerPrefs.GetInt("level", 1);
         levelText.text = "LEVEL " + currentLevel;
+        AdManager.Instance.PreloadRewardedAd();
+
     }
 
     // Update is called once per frame
@@ -23,7 +25,7 @@ public class MainMenuHandler : MonoBehaviour
 
     public void Play()
     {
-        AdManager.Instance.ShowNormalAd(3);
+        AdManager.Instance.ShowNormalAd(5);
     }
 
     public void DoPlay()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //using AppodealAds.Unity.Api;
 //using AppodealAds.Unity.Common;
-using CrazyGames;
+//using CrazyGames;
 
 public class AdManager : MonoBehaviour
 {
@@ -27,18 +27,32 @@ public class AdManager : MonoBehaviour
 
     private void Start()
     {
-        
+        GameDistribution.OnResumeGame += OnResumeGame;
+        GameDistribution.OnPauseGame += OnPauseGame;
+        GameDistribution.OnPreloadRewardedVideo += OnPreloadRewardedVideo;
+        GameDistribution.OnRewardedVideoSuccess += OnRewardedVideoSuccess;
+        GameDistribution.OnRewardedVideoFailure += OnRewardedVideoFailure;
+        GameDistribution.OnRewardGame += OnRewardGame;
+
+        PreloadRewardedAd();
+    }
+
+    public void PreloadRewardedAd()
+    {
+        GameDistribution.Instance.PreloadRewardedAd();
     }
 
     public void ShowNormalAd(int id)    
     {
         currentId = id;
-        CrazyAds.Instance.beginAdBreak(ShowRewardedCallBack);
+        // CrazyAds.Instance.beginAdBreak(ShowRewardedCallBack);
+        GameDistribution.Instance.ShowAd();
+
     }
 
     public void ShowLevelChangeAd()
     {
-        CrazyAds.Instance.beginAdBreak(ChangeLevel);
+      // CrazyAds.Instance.beginAdBreak(ChangeLevel);
     }
 
     public void ChangeLevel()
@@ -49,7 +63,10 @@ public class AdManager : MonoBehaviour
  public void ShowRewarded(int id)
     {
         currentId = id;
-        CrazyAds.Instance.beginAdBreakRewarded(ShowRewardedCallBack);
+
+        GameDistribution.Instance.ShowRewardedAd();
+
+        //  CrazyAds.Instance.beginAdBreakRewarded(ShowRewardedCallBack);
         //Call rewarded show
     }
 
@@ -82,4 +99,72 @@ public class AdManager : MonoBehaviour
         }
     }
 
+
+
+    public void OnResumeGame()
+    {
+        // RESUME MY GAME
+
+        switch (currentId)
+        {
+            case 5:
+                ChangeLevel();
+                break;
+        }
+    }
+
+    public void OnPauseGame()
+    {
+        // PAUSE MY GAME
+    }
+
+    public void OnRewardGame()
+    {
+        // REWARD PLAYER HERE
+
+        switch (currentId)
+        {
+            //Skip Level
+            case 0:
+                GameManager.Instance.SkipLevel();
+                break;
+
+            //Get moves
+            case 1:
+                GameManager.Instance.GiveMovesAfterReward();
+                break;
+
+            //Unlock car special
+            case 2:
+                PlayerPrefs.SetInt("carunlock", CarManager.Instance.GetNextSkinImage());
+                CarManager.Instance.UnlockSpecialCar();
+                UIManager.Instance.specialCar.SetActive(false);
+                break;
+
+            //Main Menu Ad
+            case 3:
+                GetComponent<MainMenuHandler>().DoPlay();
+                break;
+
+        }
+
+    }
+
+    public void OnRewardedVideoSuccess()
+    {
+        // Rewarded video succeeded/completed.;
+    }
+
+    public void OnRewardedVideoFailure()
+    {
+        // Rewarded video failed.;
+    }
+
+    public void OnPreloadRewardedVideo(int loaded)
+    {
+        // Feedback about preloading ad after called GameDistribution.Instance.PreloadRewardedAd
+        // 0: SDK couldn't preload ad
+        // 1: SDK preloaded ad
+    }
+    
 }
