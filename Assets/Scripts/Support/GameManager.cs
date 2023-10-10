@@ -79,9 +79,15 @@ public class GameManager : MonoBehaviour
         CrazyEvents.Instance.GameplayStart();
         if (currentLevel % 6 == 0)
         {
-            UIManager.Instance.specialCar.SetActive(true);
+           // UIManager.Instance.specialCar.SetActive(true);
         }
+<<<<<<< Updated upstream
         currentState = GameState.InGame;       
+=======
+        currentState = GameState.InGame;
+        Analytics.Instance.StartLevel(currentLevel);
+
+>>>>>>> Stashed changes
     }
 
     public void AddMove(int v)

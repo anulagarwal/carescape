@@ -1,30 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
 [ExecuteInEditMode]
 [RequireComponent(typeof(Camera))]
 public class MatchWidth : MonoBehaviour
 {
-    // Set this to the in-world distance between the left & right edges of your scene.
-    public float sceneWidth = 10;
-
-    Camera _camera;
+    public float sceneWidth = 10;  // Desired width in units
+    private Camera _camera;
 
     void Start()
     {
         _camera = GetComponent<Camera>();
-        _camera.orthographic = true; // Ensure the camera is Orthographic
+        // If the camera is not orthographic, this line will convert it
+        _camera.orthographic = true;
+
+        // Calculate the new orthographic size based on the scene width and screen aspect ratio
+        float aspectRatio = (float)Screen.width / (float)Screen.height;
+        _camera.orthographicSize = sceneWidth / aspectRatio / 2.0f;
     }
 
-    // Adjust the camera's height so the desired scene width fits in view
-    // even if the screen/window size changes dynamically.
     void Update()
     {
-        // The aspect ratio is the ratio of the width of the window to the height.
-        float aspectRatio = Screen.width / (float)Screen.height;
 
-        // Camera orthographicSize is the size in world units that the camera will cover vertically.
-        // To calculate the orthographic size such that certain width fits in the screen view
-        // considering the aspect ratio we do the following
-        _camera.orthographicSize = sceneWidth / (2.0f * aspectRatio);
     }
 }

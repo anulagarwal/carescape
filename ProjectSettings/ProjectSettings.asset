@@ -166,7 +166,11 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
+<<<<<<< Updated upstream
   AndroidBundleVersionCode: 2
+=======
+  AndroidBundleVersionCode: 9
+>>>>>>> Stashed changes
   AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 33
   AndroidPreferredInstallLocation: 1
@@ -249,9 +253,15 @@ PlayerSettings:
   templatePackageId: com.unity.template.3d@5.0.4
   templateDefaultScene: Assets/Scenes/SampleScene.unity
   useCustomMainManifest: 1
+<<<<<<< Updated upstream
   useCustomLauncherManifest: 1
   useCustomMainGradleTemplate: 1
   useCustomLauncherGradleManifest: 1
+=======
+  useCustomLauncherManifest: 0
+  useCustomMainGradleTemplate: 0
+  useCustomLauncherGradleManifest: 0
+>>>>>>> Stashed changes
   useCustomBaseGradleTemplate: 0
   useCustomGradlePropertiesTemplate: 1
   useCustomGradleSettingsTemplate: 0
@@ -284,7 +294,11 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
+<<<<<<< Updated upstream
       m_Icon: {fileID: 0}
+=======
+      m_Icon: {fileID: 2800000, guid: 0061bd0f20fcd448f9cbccff4bcbd89b, type: 3}
+>>>>>>> Stashed changes
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -821,9 +835,10 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: VS_ATT;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED
+    Android: VS_ATT;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED;gameanalytics_max_enabled
     Standalone: MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED
     WebGL: MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED
+    iPhone: gameanalytics_max_enabled
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
