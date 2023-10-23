@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     #region Properties
     [Header("Component Reference")]
-    [SerializeField] private GameObject confetti;
+    [SerializeField]  private List<GameObject> confetti;
     [SerializeField] private List<MonoBehaviour> objectsToDisable;
 
     [Header("Game Attributes")]
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     public void StartLevel()
     {
         UIManager.Instance.SwitchUIPanel(UIPanelState.Gameplay);
-        UIManager.Instance.UpdateSpecialCarImage();
+      //  UIManager.Instance.UpdateSpecialCarImage();
         AdManager.Instance.PreloadRewardedAd();
         if (currentLevel % 6 == 0)
         {
@@ -90,6 +90,16 @@ public class GameManager : MonoBehaviour
         numberOfMoves += v;
     }
 
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void UnPauseGame()
+    {
+        Time.timeScale = 1f;
+    }
+
     public void DoMove()
     {
         if (numberOfMoves > 0)
@@ -103,7 +113,10 @@ public class GameManager : MonoBehaviour
     {
         if (currentState == GameState.InGame)
         {
-            confetti.SetActive(true);
+            foreach (GameObject g in confetti)
+            {
+                g.SetActive(true);
+            }
             Invoke("ShowWinUI", 1.4f);
 
             currentState = GameState.Win;
@@ -120,10 +133,17 @@ public class GameManager : MonoBehaviour
 
         }
     }
+
+    public void SkipBoss()
+    {
+        PlayerPrefs.SetInt("level", currentLevel + 1);
+        currentLevel++;
+        DoChangeLevel();
+    }
     public void SkipLevel()
     {
 
-        currentState = GameState.Win;
+        //currentState = GameState.Win;
         PlayerPrefs.SetInt("level", currentLevel + 1);
         currentLevel++;
         DoChangeLevel();

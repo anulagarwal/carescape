@@ -21,6 +21,15 @@ public class MatchWidth : MonoBehaviour
 
     void Update()
     {
+#if UNITY_EDITOR
+         _camera = GetComponent<Camera>();
+        // If the camera is not orthographic, this line will convert it
+        _camera.orthographic = true;
 
+        // Calculate the new orthographic size based on the scene width and screen aspect ratio
+        float aspectRatio = (float)Screen.width / (float)Screen.height;
+        _camera.orthographicSize = sceneWidth / aspectRatio / 2.0f;
+#endif
     }
+
 }

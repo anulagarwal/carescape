@@ -33043,7 +33043,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1369014024, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1369014026, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: orthographic
@@ -33092,6 +33092,10 @@ PrefabInstance:
     - target: {fileID: 1369014027, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984966564058831349, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
+      propertyPath: orthographic size
+      value: 8.666667
       objectReference: {fileID: 0}
     - target: {fileID: 3267584594690214022, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: m_RootOrder
@@ -33159,11 +33163,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6927257647956902460, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6942786947371206145, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: sceneWidth
       value: 23.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582026293863223163, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
+      propertyPath: sceneWidth
+      value: 15.2
       objectReference: {fileID: 0}
     - target: {fileID: 9044062594721514248, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: m_IsActive

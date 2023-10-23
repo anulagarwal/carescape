@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.47238898, g: 0.8014959, b: 0.89678824, a: 1}
+  m_IndirectSpecularColor: {r: 0.4788496, g: 0.80017924, b: 0.8994595, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8788,6 +8788,7 @@ MonoBehaviour:
   blocks: []
   carUnlock: 0
   carImages: []
+  isBossLevel: 1
 --- !u!4 &603815591
 Transform:
   m_ObjectHideFlags: 0
@@ -10495,6 +10496,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4920152743475137696, guid: a28ad5dbbd7374cdbbc161f4ec9dd99c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 35.48755
+      objectReference: {fileID: 0}
     - target: {fileID: 4986357266040132224, guid: a28ad5dbbd7374cdbbc161f4ec9dd99c, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -32223,7 +32228,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1369014024, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1369014026, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: orthographic
@@ -32235,7 +32240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1369014026, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: orthographic size
-      value: 8.66
+      value: 7.875
       objectReference: {fileID: 0}
     - target: {fileID: 1369014027, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32275,7 +32280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2984966564058831349, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: orthographic size
-      value: 13.361111
+      value: 5.0906253
       objectReference: {fileID: 0}
     - target: {fileID: 3267584594690214022, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: m_RootOrder
@@ -32347,7 +32352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6927257647956902460, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6942786947371206145, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: sceneWidth
@@ -32355,7 +32360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7582026293863223163, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: sceneWidth
-      value: 16
+      value: 18.1
       objectReference: {fileID: 0}
     - target: {fileID: 9044062594721514248, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: m_IsActive

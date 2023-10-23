@@ -12,6 +12,8 @@ public class CarManager : MonoBehaviour
 
     public int carUnlock;
     [SerializeField] List<Sprite> carImages;
+    [SerializeField] bool isBossLevel = false;
+
 
     #region Singleton
     private static CarManager _instance;
@@ -37,6 +39,33 @@ public class CarManager : MonoBehaviour
     {
         carUnlock = PlayerPrefs.GetInt("carunlock", 0);
         UpdateCars(carUnlock);
+
+        if (isBossLevel)
+        {
+            UIManager.Instance.DisableBossMenu(true);
+            foreach(Car c in cars)
+            {
+                c.GetComponent<BoxCollider>().enabled = false;
+            }
+        }
+        else
+        {
+            UIManager.Instance.DisableBossMenu(false);
+
+            foreach (Car c in cars)
+            {
+                c.GetComponent<BoxCollider>().enabled = true;
+            }
+        }
+    }
+
+    public void EnableCars()
+    {
+        
+        foreach (Car c in cars)
+        {
+            c.GetComponent<BoxCollider>().enabled = true;
+        }
     }
 
     // Update is called once per frame
@@ -52,7 +81,23 @@ public class CarManager : MonoBehaviour
         Car[] blocksInScene = FindObjectsOfType<Car>();
         cars.AddRange(blocksInScene);
     }
-    
+
+    public bool IsCarMoving()
+    {
+        foreach(Car c in cars)
+        {
+            if (c.isMoving)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return false;
+    }
+
     public int GetNextSkinImage()
     {
       return  carUnlock + 1;       

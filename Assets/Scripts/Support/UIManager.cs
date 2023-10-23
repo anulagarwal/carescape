@@ -39,6 +39,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gameplayUIPanel = null;
     [SerializeField] private GameObject gameOverWinUIPanel = null;
     [SerializeField] private GameObject gameOverLoseUIPanel = null;
+    [SerializeField] private GameObject bossMenu = null;
+
     [SerializeField] private TextMeshProUGUI scoreText = null;
     [SerializeField] private Text mainLevelText = null;
     [SerializeField] private Text inGameLevelText = null;
@@ -196,7 +198,15 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.ChangeLevel();
     }
+    public void OnClickBossButton()
+    {
+        AdManager.Instance.ShowRewarded(4);
+    }
 
+    public void OnClickSkipBoss()
+    {
+        GameManager.Instance.SkipBoss();
+    }
     public void OnClickUnlockSpecial()
     {
         AdManager.Instance.ShowRewarded(2);
@@ -232,6 +242,11 @@ public class UIManager : MonoBehaviour
             PlayerPrefs.SetInt("sound", 1);
             SFX.image.sprite = enabledSFX;
         }
+    }
+
+    public void DisableBossMenu(bool disable)
+    {
+        bossMenu.SetActive(disable);
     }
 
     public async void SendPoolTo(bool add, Vector3 worldPos)

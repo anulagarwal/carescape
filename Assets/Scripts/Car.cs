@@ -11,7 +11,7 @@ public class Car : MonoBehaviour
     [SerializeField] List<GameObject> patternObject;
     [SerializeField] int patternIndex;
     [SerializeField] int maxIndex;
-    [SerializeField] bool isMoving;
+    [SerializeField] public bool isMoving;
     [SerializeField] bool isReverse;
     private float lastBacktrackTime = 0.0f;
     public float backtrackInterval = 1f;
