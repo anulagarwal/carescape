@@ -12,15 +12,19 @@ public class LevelButtonManager : MonoBehaviour
     private int currentLevelCount = 0;
     public ScrollRect scrollRect;
     public int totalLevels = 100;
+    public int currentLevel = 7;
 
     [SerializeField] private float maxScroll;  // Maximum allowed scroll up from bottom
     [SerializeField] private float minScroll;  // Minimum allowed scroll down from top
+    [SerializeField] private List<int> levelData;
+    RectTransform contentRectTransform;
+
 
     public void SpawnButton(int levelNumber)
     {
         GameObject button = buttonPool.GetPooledButton();
         button.transform.SetParent(contentTransform);
-        button.transform.localPosition = new Vector3(0, (-currentLevelCount * buttonSpacing) + (totalLevels * buttonSpacing), 0);
+        button.transform.localPosition = new Vector3(0, ((-currentLevelCount - (currentLevel-1)) * buttonSpacing) + (totalLevels * buttonSpacing) -125, 0);
 
         // Set the level number
         TextMeshProUGUI levelText = button.GetComponentInChildren<TextMeshProUGUI>(); // or TextMeshProUGUI if you're using TextMeshPro
@@ -31,51 +35,46 @@ public class LevelButtonManager : MonoBehaviour
         // Increment the current level count
         currentLevelCount++;
     }
-    RectTransform contentRectTransform;
 
     void Start()
     {
        
-
         // Set content size
-        float contentHeight = totalLevels * buttonSpacing;
         contentRectTransform = contentTransform.GetComponent<RectTransform>();
-       // contentRectTransform.sizeDelta = new Vector2(contentRectTransform.sizeDelta.x, contentHeight);
+        // contentRectTransform.sizeDelta = new Vector2(contentRectTransform.sizeDelta.x, contentHeight);
 
         // Start with the highest level at the center
-        float initialOffset = scrollRect.viewport.rect.height / 2;
         //contentRectTransform.anchoredPosition = new Vector2(0, -initialOffset);
 
-       // currentLevelCount = totalLevels;
+        // currentLevelCount = totalLevels;
+        currentLevel = PlayerPrefs.GetInt("level", 1);
+        buttonPool.Spawn(currentLevel, totalLevels);
 
         for (int i = totalLevels; i >= 1; i--)
         {
             SpawnButton(i);
         }
 
-        // Define the limits
-        float viewportHeight = scrollRect.viewport.rect.height;
-        maxScroll = contentRectTransform.sizeDelta.y - (viewportHeight / 2);  // Half of viewport to center the last button
-        minScroll = viewportHeight / 2;  // Half of viewport to center the first button
 
+        maxScroll = buttonSpacing * (currentLevel-1);
+        minScroll = -(buttonSpacing * (totalLevels-5));
     }
 
 
-   
+
 
     // Update is called once per frame
     void Update()
     {
 
         float currentY = contentRectTransform.anchoredPosition.y;
-        print(currentY);
         if (currentY > maxScroll)
         {
-            //contentRectTransform.anchoredPosition = new Vector2(0, maxScroll);
+           contentRectTransform.anchoredPosition = new Vector2(0, maxScroll);
         }
         else if (currentY < minScroll)
         {
-            //contentRectTransform.anchoredPosition = new Vector2(0, minScroll);
+            contentRectTransform.anchoredPosition = new Vector2(0, minScroll);
         }
 
     }

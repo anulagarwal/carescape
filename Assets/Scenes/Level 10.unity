@@ -32,13 +32,13 @@ RenderSettings:
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
+  m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4788496, g: 0.80017924, b: 0.8994595, a: 1}
+  m_IndirectSpecularColor: {r: 0.47238898, g: 0.8014959, b: 0.89678824, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4939,6 +4939,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3245233962419008309, guid: a28ad5dbbd7374cdbbc161f4ec9dd99c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4986357266879418087, guid: a28ad5dbbd7374cdbbc161f4ec9dd99c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5022,6 +5026,10 @@ PrefabInstance:
     - target: {fileID: 4986357266879418091, guid: a28ad5dbbd7374cdbbc161f4ec9dd99c, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004794880214028078, guid: a28ad5dbbd7374cdbbc161f4ec9dd99c, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10560,6 +10568,7 @@ MonoBehaviour:
   blocks: []
   carUnlock: 0
   carImages: []
+  isBossLevel: 0
 --- !u!4 &603815591
 Transform:
   m_ObjectHideFlags: 0
@@ -37501,6 +37510,10 @@ PrefabInstance:
       value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 2984966564058831349, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
+      propertyPath: field of view
+      value: 61.30134
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984966564058831349, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: orthographic size
       value: 15.911111
       objectReference: {fileID: 0}
@@ -37566,7 +37579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3879823285663011665, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.09
+      value: 17.14
       objectReference: {fileID: 0}
     - target: {fileID: 3879823285663011665, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -37586,7 +37599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7582026293863223163, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: sceneWidth
-      value: 17.9
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9044062594721514248, guid: f5db4eb6cdc624983bc0f79d85c6731d, type: 3}
       propertyPath: m_IsActive

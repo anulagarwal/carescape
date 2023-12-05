@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
                 m.enabled = false;
             }        
             //Send Data
-            Analytics.Instance.WinLevel();
+//            Analytics.Instance.WinLevel();
 
         }
     }

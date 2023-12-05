@@ -146,7 +146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1369014027
 Transform:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.875
+  orthographic size: 28.777777
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -440,7 +440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3879823285663011665
 Transform:
   m_ObjectHideFlags: 0
@@ -490,8 +490,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 61.30134
+  orthographic: 0
   orthographic size: 3.65625
   m_Depth: -1
   m_CullingMask:
@@ -528,7 +528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4bd410da80fa48bca3d0b2a516393cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWidth: 13
+  sceneWidth: 0.2
+  distanceFromCamera: 10
 --- !u!1001 &2111905135116726092
 PrefabInstance:
   m_ObjectHideFlags: 0

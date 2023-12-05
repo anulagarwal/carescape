@@ -8,6 +8,20 @@ public class MainMenuHandler : MonoBehaviour
     [SerializeField] int currentLevel;
     [SerializeField] TextMeshProUGUI levelText;
 
+    public static MainMenuHandler Instance = null;
+
+
+    private void Awake()
+    {
+        Application.targetFrameRate = 100;
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        Instance = this;
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {

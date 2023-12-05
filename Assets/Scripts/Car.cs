@@ -198,13 +198,29 @@ public class Car : MonoBehaviour
         if (isMoving)
         {
             int i = PlayerPrefs.GetInt("carunlock", 0);
-            if (!carSkins[i].GetComponent<MeshRenderer>().isVisible)
+            if (carSkins[i].GetComponent<MeshRenderer>() != null)
             {
-                isMoving = false;
-                isFinished = true;
+                if (!carSkins[i].GetComponent<MeshRenderer>().isVisible)
+                {
+                    isMoving = false;
+                    isFinished = true;
 
-                CarManager.Instance.CheckForWin();
-                gameObject.SetActive(false);
+                    CarManager.Instance.CheckForWin();
+                    gameObject.SetActive(false);
+                }
+            }
+
+            else if(carSkins[i].GetComponentInChildren<MeshRenderer>() != null)
+            {
+
+                if (!carSkins[i].GetComponentInChildren<MeshRenderer>().isVisible)
+                {
+                    isMoving = false;
+                    isFinished = true;
+
+                    CarManager.Instance.CheckForWin();
+                    gameObject.SetActive(false);
+                }
             }
         }
 
@@ -337,6 +353,10 @@ public class Car : MonoBehaviour
             collision.transform.DOShakePosition(shakeDuration, shakeStrength);
             hitVFX.transform.position = collision.contacts[0].point;
             hitVFX.Play();
+            foreach (GameObject g in ps)
+            {
+                g.SetActive(false);
+            }
             Backtrack();
 
             if(GameManager.Instance.numberOfMoves == 0)

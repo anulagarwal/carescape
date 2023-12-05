@@ -40,7 +40,7 @@ public class CarManager : MonoBehaviour
         carUnlock = PlayerPrefs.GetInt("carunlock", 0);
         UpdateCars(carUnlock);
 
-        if (isBossLevel)
+        /*if (isBossLevel)
         {
             UIManager.Instance.DisableBossMenu(true);
             foreach(Car c in cars)
@@ -56,6 +56,12 @@ public class CarManager : MonoBehaviour
             {
                 c.GetComponent<BoxCollider>().enabled = true;
             }
+        }
+        */
+        UIManager.Instance.DisableBossMenu(false);
+        foreach (Car c in cars)
+        {
+            c.GetComponent<BoxCollider>().enabled = true;
         }
     }
 

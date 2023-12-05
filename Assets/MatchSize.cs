@@ -12,6 +12,7 @@ public class MatchSize : MonoBehaviour
     private void Awake()
     {
         _camera = GetComponent<Camera>();
+
         // If the camera is not orthographic, this line will convert it
         _camera.orthographic = true;
     }

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using GameAnalyticsSDK;
 
 namespace Momo
 {
@@ -49,7 +48,6 @@ namespace Momo
             appSessionCount = PlayerPrefs.GetInt("appSession", 0);
             level = PlayerPrefs.GetInt("level", 1);
 
-            GameAnalytics.Initialize();
 
 
             dayNumber = PlayerPrefs.GetInt("dayNumber", 0);
@@ -92,7 +90,6 @@ namespace Momo
         public void StartLevel(int levelNumber)
         {
             level = levelNumber;
-            GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "" + level);
         }
 
         public void WinLevel()

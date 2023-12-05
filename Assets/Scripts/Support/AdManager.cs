@@ -28,19 +28,19 @@ public class AdManager : MonoBehaviour
 
     private void Start()
     {
-       /* GameDistribution.OnResumeGame += OnResumeGame;
+        GameDistribution.OnResumeGame += OnResumeGame;
         GameDistribution.OnPauseGame += OnPauseGame;
         GameDistribution.OnPreloadRewardedVideo += OnPreloadRewardedVideo;
         GameDistribution.OnRewardedVideoSuccess += OnRewardedVideoSuccess;
         GameDistribution.OnRewardedVideoFailure += OnRewardedVideoFailure;
         GameDistribution.OnRewardGame += OnRewardGame;
 
-        PreloadRewardedAd();*/
+        PreloadRewardedAd();
     }
 
     public void PreloadRewardedAd()
     {
-      //  GameDistribution.Instance.PreloadRewardedAd();
+        GameDistribution.Instance.PreloadRewardedAd();
     }
 
     public void ShowNormalAd(int id)    
@@ -49,16 +49,19 @@ public class AdManager : MonoBehaviour
          //CrazyAds.Instance.beginAdBreak(ShowRewardedCallBack);
         GameManager.Instance.PauseGame();
 
-        ShowRewardedCallBack();
+        //ShowRewardedCallBack();
 
-      //  GameDistribution.Instance.ShowAd();
+        GameDistribution.Instance.ShowAd();
 
     }
 
     public void ShowLevelChangeAd()
     {
         // CrazyAds.Instance.beginAdBreak(ChangeLevel);
-        ChangeLevel();
+        currentId = 5;
+
+        GameDistribution.Instance.ShowAd();
+
     }
 
     public void ChangeLevel()
@@ -71,8 +74,8 @@ public class AdManager : MonoBehaviour
         currentId = id;
         GameManager.Instance.PauseGame();
 
-        //GameDistribution.Instance.ShowRewardedAd();
-        ShowRewardedCallBack();
+        GameDistribution.Instance.ShowRewardedAd();
+       // ShowRewardedCallBack();
         //  CrazyAds.Instance.beginAdBreakRewarded(ShowRewardedCallBack);
         //Call rewarded show
     }
